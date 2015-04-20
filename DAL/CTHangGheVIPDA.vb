@@ -43,7 +43,7 @@ Public Class CTHangGheVIPDA
 
         para = cmd.CreateParameter()
         para.ParameterName = "@MaHang"
-        para.Value = p.MaPhong
+        para.Value = p.MaHang
         para.DbType = DbType.String
         cmd.Parameters.Add(para)
 

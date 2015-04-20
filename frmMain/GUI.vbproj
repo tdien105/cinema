@@ -93,6 +93,12 @@
     <Compile Include="frmDatVe_Nhat.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmGhe.Designer.vb">
+      <DependentUpon>frmGhe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGhe.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -159,12 +165,6 @@
     <Compile Include="frmTheLoai_Nhat.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemGhe.designer.vb">
-      <DependentUpon>frmThemGhe.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmThemGhe.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmTraCuuVe.Designer.vb">
       <DependentUpon>frmTraCuuVe.vb</DependentUpon>
     </Compile>
@@ -212,6 +212,9 @@
     <EmbeddedResource Include="frmDatVe_Nhat.resx">
       <DependentUpon>frmDatVe_Nhat.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGhe.resx">
+      <DependentUpon>frmGhe.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -245,9 +248,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTheLoai_Nhat.resx">
       <DependentUpon>frmTheLoai_Nhat.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThemGhe.resx">
-      <DependentUpon>frmThemGhe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTraCuuVe.resx">
       <DependentUpon>frmTraCuuVe.vb</DependentUpon>

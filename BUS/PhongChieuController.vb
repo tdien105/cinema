@@ -21,6 +21,11 @@ Public Class PhongChieuController
         Return PhongChieuDA.GetLatestID()
     End Function
 
-   
+    Public Shared Function Xoa(maphong As Integer) As Integer
+        Return PhongChieuDA.Xoa(maphong)
+    End Function
 
+    Public Shared Function Update(p As PhongChieu) As Integer
+        Return PhongChieuDA.Sua(p)
+    End Function
 End Class

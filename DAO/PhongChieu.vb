@@ -3,7 +3,7 @@
     Private _tenPhong As String
     Private _maLoaiPhong As Integer
     Private _marap As Integer
-    Private _tinhTrang As Short
+    Private _tinhTrang As Integer
     Private _ngayHoanThanh as Date
 
 
@@ -43,11 +43,11 @@
         End Set
     End Property
 
-    Public Property TinhTrang As Short
+    Public Property TinhTrang As Integer
         Get
             Return _tinhTrang
         End Get
-        Set(value As Short)
+        Set(value As Integer)
             _tinhTrang = value
         End Set
     End Property

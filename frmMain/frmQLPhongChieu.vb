@@ -42,12 +42,10 @@ Public Class frmQLPhongChieu
             cboRap.SelectedValue = dgvDSPhongChieu.SelectedRows(0).Cells("MaRap").Value
             cboLoaiPhong.SelectedValue = dgvDSPhongChieu.SelectedRows(0).Cells("MaLoaiPhong").Value
             txtTenPhong.Text = dgvDSPhongChieu.SelectedRows(0).Cells("TenPhong").Value.ToString()
-            
         End If
     End Sub
 
     Private Sub FormatDatagridViewRow()
-
         For Each row As DataGridViewRow In dgvDSPhongChieu.Rows
             If (IsDBNull(row.Cells("TinhTrang").Value) Or Convert.ToInt16(row.Cells("TinhTrang").Value) = 0) Then
                 row.DefaultCellStyle.BackColor = Color.Brown
@@ -95,12 +93,53 @@ Public Class frmQLPhongChieu
                                                .TenPhong = txtTenPhong.Text}
         If PhongChieuController.Them(phongChieu) Then
             MessageBox.Show("Sucess!")
+            Load_DS_Phong_Chieu()
+        Else
+            MessageBox.Show("Failed")
         End If
+
     End Sub
 
     Private Sub btnThemGhe_Click(sender As Object, e As EventArgs) Handles btnThemGhe.Click
-        'Dim maphong = dgvDSPhongChieu.SelectedRows(0).Cells("MaPhong").Value
-        Dim maphong As Integer = 1
-        Dim f As New frmThemGhe(maphong)
+        If (dgvDSPhongChieu.SelectedRows.Count = 0) Then
+            MessageBox.Show("Chon phong")
+        Else
+            Dim TenPhong = dgvDSPhongChieu.SelectedRows(0).Cells("TenPhong").Value
+            Dim f As New frmGhe(TenPhong)
+            f.Show()
+        End If
+        
+    End Sub
+
+    Private Sub btnXoa_Click(sender As Object, e As EventArgs) Handles btnXoa.Click
+        If (dgvDSPhongChieu.SelectedRows.Count = 0) Then
+            MessageBox.Show("Chọn phòng")
+        Else
+            Dim ma = Get_Ma_Phong()
+            If Not PhongChieuController.Xoa(ma) = -1 Then
+                MessageBox.Show("Success")
+                Load_DS_Phong_Chieu()
+            Else
+                MessageBox.Show("Failed")
+            End If
+        End If
+    End Sub
+
+    Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
+        
+        If (dgvDSPhongChieu.SelectedRows.Count = 0) Then
+            MessageBox.Show("Chọn phòng")
+        Else
+            Dim phongChieu As New PhongChieu With {.MaPhong = Get_Ma_Phong(),
+                                               .MaRap = cboRap.SelectedValue,
+                                               .MaLoaiPhong = cboLoaiPhong.SelectedValue,
+                                               .TenPhong = txtTenPhong.Text}
+            If Not PhongChieuController.Update(phongChieu) = -1 Then
+                MessageBox.Show("Success")
+                Load_DS_Phong_Chieu()
+            Else
+                MessageBox.Show("Failed")
+            End If
+        End If
     End Sub
 End Class
