@@ -5,8 +5,8 @@ Public Class PhimController
     Public Shared Function GetDS() As DataTable
         Return PhimDA.GetDanhSach()
     End Function
-    Public Shared Function Them(p As Phim) As Boolean
-        Return PhimDA.Them(p) <> -1
+    Public Shared Function Them(p As Phim) As Integer
+        Return PhimDA.Them(p)
     End Function
 
     Public Shared Function Sua(p As Phim) As Boolean

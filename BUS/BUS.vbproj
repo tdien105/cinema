@@ -67,6 +67,7 @@
     <Compile Include="GiaVeController.vb" />
     <Compile Include="LoaiPhongChieuController.vb" />
     <Compile Include="NPHController.vb" />
+    <Compile Include="PhieuNhapPhimController.vb" />
     <Compile Include="PhimController.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

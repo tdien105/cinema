@@ -1,7 +1,7 @@
 ﻿Public Class PhieuNhapPhim
     Private _maPhieu As Integer
     Private _maPhim As Integer
-    Private _ngayNhap As Date
+    Private _ngayNhap As DateTime
     Private _soTien As Double
 
 
@@ -23,11 +23,11 @@
         End Set
     End Property
 
-    Public Property NgayNhap As Date
+    Public Property NgayNhap As DateTime
         Get
             Return _ngayNhap
         End Get
-        Set(value As Date)
+        Set(value As DateTime)
             _ngayNhap = value
         End Set
     End Property

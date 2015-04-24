@@ -4,7 +4,7 @@ Imports DAO
 Public Class PhimDA
     Public Shared Function GetDanhSach() As DataTable
         Dim cmd As DbCommand = GenericDataAccess.CreateCommand("TEXT")
-        cmd.CommandText = "SELECT P.MaPhim, PN.NgayNhap,P.TenPhim,TL.TenTheLoai,P.DaoDien,P.ThoiLuong,P.DoTuoi,P.ThongTinPhim,NPH.TenNPH,SoTien  FROM Phim P LEFT JOIN PhieuNhapPhim PN ON P.MaPhim = PN.MaPhim LEFT JOIN TheLoai TL ON P.MaTheLoai = TL.MaTheLoai LEFT JOIN NhaPhatHanhPhim NPH ON P.MaNhaPhatHanh = NPH.MaNPH "
+        cmd.CommandText = "SELECT *  FROM Phim P LEFT JOIN PhieuNhapPhim PN ON P.MaPhim = PN.MaPhim LEFT JOIN TheLoai TL ON P.MaTheLoai = TL.MaTheLoai LEFT JOIN NhaPhatHanhPhim NPH ON P.MaNhaPhatHanh = NPH.MaNPH "
         Return GenericDataAccess.ExecuteSelectCommand(cmd)
     End Function
     'Public Shared Function Fillter(marap As Integer, maphong As Integer) As datatb
@@ -30,7 +30,7 @@ Public Class PhimDA
     '  ,[NgayCongChieu]
     Public Shared Function Them(p As Phim) As Integer
         Dim cmd As DbCommand = GenericDataAccess.CreateCommand("TEXT")
-        cmd.CommandText = "INSERT INTO PHIM(TenPhim,MaTheLoai,MaNhaPhatHanh,ThongTinPhim,HinhAnh,DaoDien,ThoiLuong,Trailer,DoTuoi,NgayCongChieu) VALUES (@TenPhim,@MaTheLoai,@MaNhaPhatHanh,@ThongTinPhim,@HinhAnh,@DaoDien,@ThoiLuong,@Trailer,@DoTuoi,@NgayCongChieu)"
+        cmd.CommandText = "INSERT INTO PHIM(TenPhim,MaTheLoai,MaNhaPhatHanh,ThongTinPhim,HinhAnh,DaoDien,ThoiLuong,Trailer,DoTuoi,NgayCongChieu) VALUES (@TenPhim,@MaTheLoai,@MaNhaPhatHanh,@ThongTinPhim,@HinhAnh,@DaoDien,@ThoiLuong,@Trailer,@DoTuoi,@NgayCongChieu);Select @@Identity"
         Dim para As DbParameter = cmd.CreateParameter()
         para.ParameterName = "@TenPhim"
         para.Value = p.TenPhim
@@ -93,7 +93,7 @@ Public Class PhimDA
 
         Dim result As Integer = -1
         Try
-            result = GenericDataAccess.ExecuteNoneQuery(cmd)
+            result = GenericDataAccess.ExecuteScalar(cmd)
         Catch ex As Exception
 
         End Try

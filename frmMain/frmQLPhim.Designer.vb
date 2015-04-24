@@ -56,10 +56,10 @@ Partial Class frmQLPhim
         Me.btnposter = New DevExpress.XtraEditors.SimpleButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.txttomtat = New System.Windows.Forms.ListBox()
         Me.group = New System.Windows.Forms.GroupBox()
         Me.video = New AxWMPLib.AxWindowsMediaPlayer()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
+        Me.txttomtat = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.txtsotien.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtthoiluong.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -380,14 +380,6 @@ Partial Class frmQLPhim
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Tóm tắt:"
         '
-        'txttomtat
-        '
-        Me.txttomtat.FormattingEnabled = True
-        Me.txttomtat.Location = New System.Drawing.Point(15, 24)
-        Me.txttomtat.Name = "txttomtat"
-        Me.txttomtat.Size = New System.Drawing.Size(185, 212)
-        Me.txttomtat.TabIndex = 20
-        '
         'group
         '
         Me.group.Controls.Add(Me.video)
@@ -411,6 +403,14 @@ Partial Class frmQLPhim
         'opd
         '
         Me.opd.FileName = "OpenFileDialog1"
+        '
+        'txttomtat
+        '
+        Me.txttomtat.Location = New System.Drawing.Point(7, 16)
+        Me.txttomtat.Multiline = True
+        Me.txttomtat.Name = "txttomtat"
+        Me.txttomtat.Size = New System.Drawing.Size(205, 225)
+        Me.txttomtat.TabIndex = 0
         '
         'frmQLPhim
         '
@@ -441,6 +441,7 @@ Partial Class frmQLPhim
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.group.ResumeLayout(False)
         CType(Me.video, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -472,7 +473,6 @@ Partial Class frmQLPhim
     Friend WithEvents btnposter As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents txttomtat As System.Windows.Forms.ListBox
     Friend WithEvents group As System.Windows.Forms.GroupBox
     Friend WithEvents video As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents opd As System.Windows.Forms.OpenFileDialog
@@ -484,4 +484,5 @@ Partial Class frmQLPhim
     Friend WithEvents cboNPH As System.Windows.Forms.ComboBox
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents txttomtat As System.Windows.Forms.TextBox
 End Class
