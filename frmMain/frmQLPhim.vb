@@ -19,6 +19,7 @@ Public Class frmQLPhim
         cboNPH.DisplayMember = "TenNPH"
         cboNPH.SelectedIndex = -1
 
+        dgvDS.DataSource = Nothing
         'Set AutoGenerateColumns False
         dgvDS.AutoGenerateColumns = False
 
@@ -150,8 +151,10 @@ Public Class frmQLPhim
                     MessageBox.Show("Success")
                     GlobalVars.trailer = ""
                     GlobalVars.hinh = ""
+                    LoadData()
                 Else
                     MessageBox.Show("Lỗi ghi dữ liệu!")
+                    PhimController.Xoa(result)
                 End If
             Else
                 MessageBox.Show("Lỗi ghi dữ liệu!")
@@ -165,8 +168,12 @@ Public Class frmQLPhim
         If (isSelected()) Then
             Dim maPhim = dgvDS.SelectedRows(0).Cells("MaPhim").Value
             Dim maphieu = dgvDS.SelectedRows(0).Cells("MaPhieu").Value
-            If (PhimController.Xoa(maPhim)) And PhieuNhapPhimController.Xoa(maphieu) Then
-                MessageBox.Show("Xóa thành công.")
+            If (PhimController.Xoa(maPhim)) Then
+                If PhieuNhapPhimController.Xoa(maphieu) Then
+                    MessageBox.Show("Xóa thành công.")
+                    LoadData()
+                End If
+                
             Else
                 MessageBox.Show("Xóa thất bại.")
             End If
@@ -207,6 +214,7 @@ Public Class frmQLPhim
                     MessageBox.Show("Success")
                     GlobalVars.trailer = ""
                     GlobalVars.hinh = ""
+                    LoadData()
                 Else
                     MessageBox.Show("Lỗi ghi dữ liệu!")
                 End If
@@ -227,9 +235,15 @@ Public Class frmQLPhim
         video.URL = ""
         GlobalVars.trailer = ""
         GlobalVars.hinh = ""
+        txtsotien.Text = ""
     End Sub
 
-    Private Sub dgvDS_SelectionChanged(sender As Object, e As EventArgs) Handles dgvDS.SelectionChanged
+    Private Sub frmQLPhim_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        GlobalVars.trailer = ""
+        GlobalVars.hinh = ""
+    End Sub
+
+    Private Sub dgvDS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDS.CellClick
         Dim phim As Phim = Get_Phim_Info_DGV()
         txtTenPhim.Text = phim.TenPhim
         datengaynhap.DateTime = phim.NgayCongChieu
@@ -243,10 +257,5 @@ Public Class frmQLPhim
 
         pic.ImageLocation = phim.HinhAnh
         video.URL = phim.Trailer
-    End Sub
-
-    Private Sub frmQLPhim_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        GlobalVars.trailer = ""
-        GlobalVars.hinh = ""
     End Sub
 End Class

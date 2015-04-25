@@ -11,18 +11,16 @@ Public Class PhieuNhapPhimDA
         cmd.CommandText = "INSERT INTO PHIEUNHAPPHIM(MAPHIM,NGAYNHAP,SOTIEN) VALUES (@MaPhim,@NgayNhap,@SoTien)"
         Dim para As DbParameter = cmd.CreateParameter()
         para.ParameterName = "@MaPhim"
-        para.Value = p.MaPhieu
+        para.Value = p.MaPhim
         para.DbType = DbType.Int32
         cmd.Parameters.Add(para)
 
-        para = cmd.CreateParameter()
         para = cmd.CreateParameter()
         para.ParameterName = "@NgayNhap"
         para.Value = p.NgayNhap
         para.DbType = DbType.DateTime
         cmd.Parameters.Add(para)
 
-        para = cmd.CreateParameter()
         para = cmd.CreateParameter()
         para.ParameterName = "@SoTien"
         para.Value = p.SoTien
@@ -66,20 +64,17 @@ Public Class PhieuNhapPhimDA
         cmd.Parameters.Add(para)
 
         para = cmd.CreateParameter()
-        para = cmd.CreateParameter()
         para.ParameterName = "@NgayNhap"
         para.Value = p.NgayNhap
         para.DbType = DbType.DateTime
         cmd.Parameters.Add(para)
 
         para = cmd.CreateParameter()
-        para = cmd.CreateParameter()
         para.ParameterName = "@SoTien"
         para.Value = p.SoTien
         para.DbType = DbType.Int32
         cmd.Parameters.Add(para)
 
-        para = cmd.CreateParameter()
         para = cmd.CreateParameter()
         para.ParameterName = "@MaPhieu"
         para.Value = p.MaPhieu
