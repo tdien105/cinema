@@ -226,13 +226,13 @@ Public Class frmQLPhim
     End Sub
 
     Private Sub btnLamMoi_Click(sender As Object, e As EventArgs) Handles btnLamMoi.Click
-        txtTenPhim.Text = ""
-        txtdotuoi.Text = ""
-        txtdaodien.Text = ""
-        pic.ImageLocation = ""
+        For Each ctr As Control In Me.Controls
+            If (ctr.GetType() Is GetType(TextBox)) Then
+                Dim txt = CType(ctr, TextBox)
+                txt.Text = ""
+            End If
+        Next
         datengaynhap.DateTime = Today
-        txtthoiluong.Text = ""
-        txttomtat.Text = ""
         video.URL = ""
         GlobalVars.trailer = ""
         GlobalVars.hinh = ""
@@ -258,5 +258,11 @@ Public Class frmQLPhim
 
         pic.ImageLocation = phim.HinhAnh
         video.URL = phim.Trailer
+    End Sub
+
+    Private Sub btnthemTL_Click(sender As Object, e As EventArgs) Handles btnthemTL.Click
+        Dim f As New frmTheLoai()
+        f.Show()
+
     End Sub
 End Class

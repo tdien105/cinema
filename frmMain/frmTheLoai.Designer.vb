@@ -30,8 +30,6 @@ Partial Class frmTheLoai
         Me.btnThem = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.txtTenTheLoai = New System.Windows.Forms.TextBox()
-        Me.MaTheLoai = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TenTheLoai = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.dgvDS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,9 +47,10 @@ Partial Class frmTheLoai
         '
         'dgvDS
         '
+        Me.dgvDS.AllowUserToAddRows = False
+        Me.dgvDS.AllowUserToDeleteRows = False
         Me.dgvDS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDS.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MaTheLoai, Me.TenTheLoai})
         Me.dgvDS.Location = New System.Drawing.Point(5, 5)
         Me.dgvDS.Name = "dgvDS"
         Me.dgvDS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -110,20 +109,6 @@ Partial Class frmTheLoai
         Me.txtTenTheLoai.Size = New System.Drawing.Size(232, 20)
         Me.txtTenTheLoai.TabIndex = 1
         '
-        'MaTheLoai
-        '
-        Me.MaTheLoai.DataPropertyName = "ID"
-        Me.MaTheLoai.HeaderText = "Thể loại"
-        Me.MaTheLoai.Name = "MaTheLoai"
-        Me.MaTheLoai.ReadOnly = True
-        '
-        'TenTheLoai
-        '
-        Me.TenTheLoai.DataPropertyName = "TenTheLoai"
-        Me.TenTheLoai.HeaderText = "Tên thể loại"
-        Me.TenTheLoai.Name = "TenTheLoai"
-        Me.TenTheLoai.ReadOnly = True
-        '
         'frmTheLoai
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -150,6 +135,4 @@ Partial Class frmTheLoai
     Friend WithEvents btnThem As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtTenTheLoai As System.Windows.Forms.TextBox
-    Friend WithEvents MaTheLoai As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TenTheLoai As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
