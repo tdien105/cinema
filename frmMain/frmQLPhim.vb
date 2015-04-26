@@ -168,12 +168,11 @@ Public Class frmQLPhim
         If (isSelected()) Then
             Dim maPhim = dgvDS.SelectedRows(0).Cells("MaPhim").Value
             Dim maphieu = dgvDS.SelectedRows(0).Cells("MaPhieu").Value
-            If (PhimController.Xoa(maPhim)) Then
-                If PhieuNhapPhimController.Xoa(maphieu) Then
+            If PhieuNhapPhimController.Xoa(maphieu) Then
+                If (PhimController.Xoa(maPhim)) Then
                     MessageBox.Show("Xóa thành công.")
                     LoadData()
                 End If
-                
             Else
                 MessageBox.Show("Xóa thất bại.")
             End If
