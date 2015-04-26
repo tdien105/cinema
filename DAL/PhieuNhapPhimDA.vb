@@ -6,6 +6,7 @@ Public Class PhieuNhapPhimDA
         cmd.CommandText = "SELECT * FROM PHIEUNHAPPHIM"
         Return GenericDataAccess.ExecuteSelectCommand(cmd)
     End Function
+
     Public Shared Function Them(p As PhieuNhapPhim) As Integer
         Dim cmd As DbCommand = GenericDataAccess.CreateCommand("TEXT")
         cmd.CommandText = "INSERT INTO PHIEUNHAPPHIM(MAPHIM,NGAYNHAP,SOTIEN) VALUES (@MaPhim,@NgayNhap,@SoTien)"

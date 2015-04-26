@@ -25,14 +25,6 @@ Partial Class frmQLLichChieu
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.dgvSuatChieu = New System.Windows.Forms.DataGridView()
-        Me.MaSuat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MaPhong = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MaRap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SuatChieu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NgayChieu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TenPhong = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TenRap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TenLoaiPhong = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.cboRapPhim = New System.Windows.Forms.ComboBox()
@@ -47,6 +39,8 @@ Partial Class frmQLLichChieu
         Me.btnThem = New DevExpress.XtraEditors.SimpleButton()
         Me.txtDSPhimSearch = New System.Windows.Forms.TextBox()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.cboTieuChi = New System.Windows.Forms.ComboBox()
         Me.dgvDSPhim = New System.Windows.Forms.DataGridView()
         Me.TenPhim = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HinhAnh = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,8 +50,14 @@ Partial Class frmQLLichChieu
         Me.TheLoai = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TenNPH = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ThongTinPhim = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.cboTieuChi = New System.Windows.Forms.ComboBox()
+        Me.MaSuat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MaPhong = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MaRap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SuatChieu = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NgayChieu = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TenPhong = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TenRap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TenLoaiPhong = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
@@ -96,65 +96,6 @@ Partial Class frmQLLichChieu
         Me.dgvSuatChieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSuatChieu.Size = New System.Drawing.Size(658, 269)
         Me.dgvSuatChieu.TabIndex = 1
-        '
-        'MaSuat
-        '
-        Me.MaSuat.DataPropertyName = "MaSuat"
-        Me.MaSuat.HeaderText = "Mã Suất"
-        Me.MaSuat.Name = "MaSuat"
-        Me.MaSuat.ReadOnly = True
-        Me.MaSuat.Visible = False
-        '
-        'MaPhong
-        '
-        Me.MaPhong.DataPropertyName = "MaPhong"
-        Me.MaPhong.HeaderText = "Mã phòng"
-        Me.MaPhong.Name = "MaPhong"
-        Me.MaPhong.ReadOnly = True
-        Me.MaPhong.Visible = False
-        '
-        'MaRap
-        '
-        Me.MaRap.DataPropertyName = "MaRap"
-        Me.MaRap.HeaderText = "Mã Rạp"
-        Me.MaRap.Name = "MaRap"
-        Me.MaRap.ReadOnly = True
-        Me.MaRap.Visible = False
-        '
-        'SuatChieu
-        '
-        Me.SuatChieu.DataPropertyName = "SuatChieu"
-        Me.SuatChieu.HeaderText = "Suất chiếu"
-        Me.SuatChieu.Name = "SuatChieu"
-        Me.SuatChieu.ReadOnly = True
-        '
-        'NgayChieu
-        '
-        Me.NgayChieu.DataPropertyName = "NgayChieu"
-        Me.NgayChieu.HeaderText = "Ngày chiếu"
-        Me.NgayChieu.Name = "NgayChieu"
-        Me.NgayChieu.ReadOnly = True
-        '
-        'TenPhong
-        '
-        Me.TenPhong.DataPropertyName = "TenPhong"
-        Me.TenPhong.HeaderText = "Tên phòng"
-        Me.TenPhong.Name = "TenPhong"
-        Me.TenPhong.ReadOnly = True
-        '
-        'TenRap
-        '
-        Me.TenRap.DataPropertyName = "TenRap"
-        Me.TenRap.HeaderText = "Tên rạp"
-        Me.TenRap.Name = "TenRap"
-        Me.TenRap.ReadOnly = True
-        '
-        'TenLoaiPhong
-        '
-        Me.TenLoaiPhong.DataPropertyName = "TenLoaiPhong"
-        Me.TenLoaiPhong.HeaderText = "Loại phòng"
-        Me.TenLoaiPhong.Name = "TenLoaiPhong"
-        Me.TenLoaiPhong.ReadOnly = True
         '
         'GroupControl3
         '
@@ -286,6 +227,22 @@ Partial Class frmQLLichChieu
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Danh Sách Phim"
         '
+        'LabelControl4
+        '
+        Me.LabelControl4.Location = New System.Drawing.Point(196, 36)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(62, 13)
+        Me.LabelControl4.TabIndex = 75
+        Me.LabelControl4.Text = "Search theo:"
+        '
+        'cboTieuChi
+        '
+        Me.cboTieuChi.FormattingEnabled = True
+        Me.cboTieuChi.Location = New System.Drawing.Point(288, 33)
+        Me.cboTieuChi.Name = "cboTieuChi"
+        Me.cboTieuChi.Size = New System.Drawing.Size(164, 21)
+        Me.cboTieuChi.TabIndex = 74
+        '
         'dgvDSPhim
         '
         Me.dgvDSPhim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -355,21 +312,63 @@ Partial Class frmQLLichChieu
         Me.ThongTinPhim.Name = "ThongTinPhim"
         Me.ThongTinPhim.ReadOnly = True
         '
-        'LabelControl4
+        'MaSuat
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(196, 36)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(62, 13)
-        Me.LabelControl4.TabIndex = 75
-        Me.LabelControl4.Text = "Search theo:"
+        Me.MaSuat.DataPropertyName = "MaSuat"
+        Me.MaSuat.HeaderText = "Mã Suất"
+        Me.MaSuat.Name = "MaSuat"
+        Me.MaSuat.ReadOnly = True
         '
-        'cboTieuChi
+        'MaPhong
         '
-        Me.cboTieuChi.FormattingEnabled = True
-        Me.cboTieuChi.Location = New System.Drawing.Point(288, 33)
-        Me.cboTieuChi.Name = "cboTieuChi"
-        Me.cboTieuChi.Size = New System.Drawing.Size(164, 21)
-        Me.cboTieuChi.TabIndex = 74
+        Me.MaPhong.DataPropertyName = "MaPhong"
+        Me.MaPhong.HeaderText = "Mã phòng"
+        Me.MaPhong.Name = "MaPhong"
+        Me.MaPhong.ReadOnly = True
+        Me.MaPhong.Visible = False
+        '
+        'MaRap
+        '
+        Me.MaRap.DataPropertyName = "MaRap"
+        Me.MaRap.HeaderText = "Mã Rạp"
+        Me.MaRap.Name = "MaRap"
+        Me.MaRap.ReadOnly = True
+        Me.MaRap.Visible = False
+        '
+        'SuatChieu
+        '
+        Me.SuatChieu.DataPropertyName = "SuatChieu"
+        Me.SuatChieu.HeaderText = "Suất chiếu"
+        Me.SuatChieu.Name = "SuatChieu"
+        Me.SuatChieu.ReadOnly = True
+        '
+        'NgayChieu
+        '
+        Me.NgayChieu.DataPropertyName = "NgayChieu"
+        Me.NgayChieu.HeaderText = "Ngày chiếu"
+        Me.NgayChieu.Name = "NgayChieu"
+        Me.NgayChieu.ReadOnly = True
+        '
+        'TenPhong
+        '
+        Me.TenPhong.DataPropertyName = "TenPhong"
+        Me.TenPhong.HeaderText = "Tên phòng"
+        Me.TenPhong.Name = "TenPhong"
+        Me.TenPhong.ReadOnly = True
+        '
+        'TenRap
+        '
+        Me.TenRap.DataPropertyName = "TenRap"
+        Me.TenRap.HeaderText = "Tên rạp"
+        Me.TenRap.Name = "TenRap"
+        Me.TenRap.ReadOnly = True
+        '
+        'TenLoaiPhong
+        '
+        Me.TenLoaiPhong.DataPropertyName = "TenLoaiPhong"
+        Me.TenLoaiPhong.HeaderText = "Loại phòng"
+        Me.TenLoaiPhong.Name = "TenLoaiPhong"
+        Me.TenLoaiPhong.ReadOnly = True
         '
         'frmQLLichChieu
         '
@@ -422,6 +421,8 @@ Partial Class frmQLLichChieu
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cboRapPhim As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents cboTieuChi As System.Windows.Forms.ComboBox
     Friend WithEvents MaSuat As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MaPhong As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MaRap As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -430,6 +431,4 @@ Partial Class frmQLLichChieu
     Friend WithEvents TenPhong As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TenRap As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TenLoaiPhong As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents cboTieuChi As System.Windows.Forms.ComboBox
 End Class

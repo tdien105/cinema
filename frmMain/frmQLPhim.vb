@@ -125,6 +125,7 @@ Public Class frmQLPhim
                                 .Trailer = GlobalVars.trailer}
         Return P
     End Function
+
     Private Function CheckData() As Boolean
         If txtTenPhim.Text = "" Or txtdotuoi.Text = "" Or txtthoiluong.Text = "" Or txtsotien.Text = "" Or GlobalVars.trailer = "" Or GlobalVars.hinh = "" Then Return False
             Return True
@@ -200,6 +201,7 @@ Public Class frmQLPhim
                                    .Trailer = dgvDS.SelectedRows(0).Cells("Trailer").Value.ToString()}
         Return phim
     End Function
+
     Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
         If CheckData() Then
             Dim phim As Phim = Get_Phim_Info_DGV()

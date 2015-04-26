@@ -133,4 +133,42 @@ Public Class VeDA
         End Try
         Return result
     End Function
+
+    Shared Function Lay_DS_DoanhThu_Theo_Phim() As DataTable
+        Dim cmd As DbCommand = GenericDataAccess.CreateCommand("text")
+        cmd.CommandText = "select SuatChieu.MaPhim,Tenphim, SUM(giatien) as TongTien from Ve left join SuatChieu on Ve.MaSuat = SuatChieu.MaSuat left join Phim on SuatChieu.MaPhim = Phim.MaPhim group by SuatChieu.maphim,tenphim"
+        Return GenericDataAccess.ExecuteSelectCommand(cmd)
+    End Function
+
+    Shared Function Lay_DS_DoanhThu_Theo_Phong_Chieu() As Object
+        Dim cmd As DbCommand = GenericDataAccess.CreateCommand("text")
+        cmd.CommandText = "SELECT Tenphong,SUM(GiaTien) as Tongtien FROM SuatChieu SC left join Ve on SC.MaSuat = Ve.MaSuat left join PhongChieu PC on SC.MaPhong = PC.MaPhong group by tenphong"
+        Return GenericDataAccess.ExecuteSelectCommand(cmd)
+    End Function
+
+    Shared Function Lay_DS_DoanhThu_Theo_Ngay() As Object
+        Dim cmd As DbCommand = GenericDataAccess.CreateCommand("text")
+        cmd.CommandText = "SELECT Ngay,SUM(GiaTien) as Tongtien FROM SuatChieu SC left join Ve on SC.MaSuat = Ve.MaSuat group by Ngay "
+        Return GenericDataAccess.ExecuteSelectCommand(cmd)
+    End Function
+
+    Shared Function Lay_DS_DoanhThu_Between_Ngay(dtpFrom As Date, dtpTo As Date) As DataTable
+        Dim cmd As DbCommand = GenericDataAccess.CreateCommand("text")
+        cmd.CommandText = "SELECT Ngay,SUM(GiaTien) as Tongtien FROM SuatChieu SC left join Ve on SC.MaSuat = Ve.MaSuat group by Ngay having Ngay between @dateFrom and @DateTo"
+
+        Dim para As DbParameter = cmd.CreateParameter()
+        para.ParameterName = "@DateFrom"
+        para.Value = dtpFrom
+        para.DbType = DbType.Date
+        cmd.Parameters.Add(para)
+
+        para = cmd.CreateParameter()
+        para.ParameterName = "@DateTo"
+        para.Value = dtpTo
+        para.DbType = DbType.Date
+        cmd.Parameters.Add(para)
+
+        Return GenericDataAccess.ExecuteSelectCommand(cmd)
+    End Function
+
 End Class
