@@ -28,7 +28,7 @@ Public Class TheLoaiDA
 
     Public Shared Function Xoa(maTheLoai As Integer) As Integer
         Dim cmd As DbCommand = GenericDataAccess.CreateCommand("TEXT")
-        cmd.CommandText = "DELETE FROM THELOAI WHERE Id = @MaTheLoai"
+        cmd.CommandText = "DELETE FROM THELOAI WHERE MaTheLoai = @MaTheLoai"
         Dim para As DbParameter = cmd.CreateParameter()
         para.ParameterName = "@MaTheLoai"
         para.Value = maTheLoai
@@ -44,9 +44,9 @@ Public Class TheLoaiDA
         Return result
     End Function
 
-    Shared Function CapNhat(tl As TheLoai) As Boolean
+    Shared Function CapNhat(tl As TheLoai) As Integer
         Dim cmd As DbCommand = GenericDataAccess.CreateCommand("TEXT")
-        cmd.CommandText = "UPDATE THELOAI SET TENTHELOAI = @TenTheLoai WHERE ID = @MaTheLoai"
+        cmd.CommandText = "UPDATE THELOAI SET TENTHELOAI = @TenTheLoai WHERE MaTheLoai = @MaTheLoai"
         Dim para As DbParameter = cmd.CreateParameter()
         para.ParameterName = "@MaTheLoai"
         para.Value = tl.MaTheLoai

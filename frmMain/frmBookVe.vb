@@ -34,11 +34,6 @@ Public Class frmBookVe
         btnbook.Enabled = False
         GlobalVars.VeChon = 0
         GlobalVars.ListGhe.Clear()
-        GlobalVars.SoVe = Integer.Parse(txtsove.Value)
-        If GlobalVars.SoVe < 1 Then
-            MessageBox.Show("Vui long chon it nhat 1 ve")
-            Return
-        End If
         LoadGhe()
     End Sub
 
@@ -66,7 +61,7 @@ Public Class frmBookVe
                             btn.Enabled = False
                         End If
                     Next
-                    AddHandler btn.Click, AddressOf Me.Button_Click   ' Again from answer by Reed.
+                    AddHandler btn.Click, AddressOf Me.Button_Click
                     pnMain.Controls.Add(btn)
                 Next
             Next
@@ -89,7 +84,7 @@ Public Class frmBookVe
             GlobalVars.ListGhe.Add(b.Text)
             GlobalVars.VeChon += 1
         End If
-        If (GlobalVars.VeChon = GlobalVars.SoVe) Then
+        If (GlobalVars.VeChon > 0) Then
             btnbook.Enabled = True
         Else
             btnbook.Enabled = False

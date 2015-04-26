@@ -30,12 +30,10 @@ Partial Class frmBookVe
         Me.btnhienthi = New DevExpress.XtraEditors.SimpleButton()
         Me.dchonngay = New DevExpress.XtraEditors.DateEdit()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtsove = New DevExpress.XtraEditors.SpinEdit()
         Me.btnclear = New DevExpress.XtraEditors.SimpleButton()
         Me.btnbook = New DevExpress.XtraEditors.SimpleButton()
         Me.pnMain = New System.Windows.Forms.FlowLayoutPanel()
@@ -43,7 +41,6 @@ Partial Class frmBookVe
         Me.PanelControl1.SuspendLayout()
         CType(Me.dchonngay.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dchonngay.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtsove.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -56,13 +53,16 @@ Partial Class frmBookVe
         Me.PanelControl1.Controls.Add(Me.btnhienthi)
         Me.PanelControl1.Controls.Add(Me.dchonngay)
         Me.PanelControl1.Controls.Add(Me.Label6)
-        Me.PanelControl1.Controls.Add(Me.Label5)
         Me.PanelControl1.Controls.Add(Me.Label4)
         Me.PanelControl1.Controls.Add(Me.Label3)
         Me.PanelControl1.Controls.Add(Me.Label2)
         Me.PanelControl1.Controls.Add(Me.Label1)
+<<<<<<< HEAD
         Me.PanelControl1.Controls.Add(Me.txtsove)
         Me.PanelControl1.Location = New System.Drawing.Point(23, 30)
+=======
+        Me.PanelControl1.Location = New System.Drawing.Point(1, 2)
+>>>>>>> 42dd87338b8314a5589385c726e9da54e8400cf6
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(178, 362)
         Me.PanelControl1.TabIndex = 0
@@ -126,15 +126,6 @@ Partial Class frmBookVe
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Chọn phim"
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 271)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Số vé"
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -170,17 +161,6 @@ Partial Class frmBookVe
         Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Chọn rạp"
-        '
-        'txtsove
-        '
-        Me.txtsove.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.txtsove.Location = New System.Drawing.Point(15, 293)
-        Me.txtsove.Name = "txtsove"
-        Me.txtsove.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtsove.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.[Default]
-        Me.txtsove.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
-        Me.txtsove.Size = New System.Drawing.Size(146, 20)
-        Me.txtsove.TabIndex = 10
         '
         'btnclear
         '
@@ -221,19 +201,16 @@ Partial Class frmBookVe
         Me.PanelControl1.PerformLayout()
         CType(Me.dchonngay.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dchonngay.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtsove.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dchonngay As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents txtsove As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents btnhienthi As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cborap As System.Windows.Forms.ComboBox
     Friend WithEvents cbosuatchieu As System.Windows.Forms.ComboBox
