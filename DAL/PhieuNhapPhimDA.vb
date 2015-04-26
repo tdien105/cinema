@@ -6,6 +6,7 @@ Public Class PhieuNhapPhimDA
         cmd.CommandText = "SELECT * FROM PHIEUNHAPPHIM"
         Return GenericDataAccess.ExecuteSelectCommand(cmd)
     End Function
+
     Public Shared Function Them(p As PhieuNhapPhim) As Integer
         Dim cmd As DbCommand = GenericDataAccess.CreateCommand("TEXT")
         cmd.CommandText = "INSERT INTO PHIEUNHAPPHIM(MAPHIM,NGAYNHAP,SOTIEN) VALUES (@MaPhim,@NgayNhap,@SoTien)"
@@ -16,13 +17,11 @@ Public Class PhieuNhapPhimDA
         cmd.Parameters.Add(para)
 
         para = cmd.CreateParameter()
-        para = cmd.CreateParameter()
         para.ParameterName = "@NgayNhap"
         para.Value = p.NgayNhap
         para.DbType = DbType.DateTime
         cmd.Parameters.Add(para)
 
-        para = cmd.CreateParameter()
         para = cmd.CreateParameter()
         para.ParameterName = "@SoTien"
         para.Value = p.SoTien
@@ -66,20 +65,17 @@ Public Class PhieuNhapPhimDA
         cmd.Parameters.Add(para)
 
         para = cmd.CreateParameter()
-        para = cmd.CreateParameter()
         para.ParameterName = "@NgayNhap"
         para.Value = p.NgayNhap
         para.DbType = DbType.DateTime
         cmd.Parameters.Add(para)
 
         para = cmd.CreateParameter()
-        para = cmd.CreateParameter()
         para.ParameterName = "@SoTien"
         para.Value = p.SoTien
         para.DbType = DbType.Int32
         cmd.Parameters.Add(para)
 
-        para = cmd.CreateParameter()
         para = cmd.CreateParameter()
         para.ParameterName = "@MaPhieu"
         para.Value = p.MaPhieu
@@ -94,4 +90,9 @@ Public Class PhieuNhapPhimDA
         End Try
         Return result
     End Function
+
+    Shared Function Lay_DS_DoanhThu() As DataTable
+        Throw New NotImplementedException
+    End Function
+
 End Class

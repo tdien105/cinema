@@ -20,7 +20,7 @@ Public Class frmQLLichChieu
     Private Sub LoadDSPhim()
         dgvDSPhim.AutoGenerateColumns = False
         dgvDSPhim.DataSource = PhimController.GetDS()
-        dgvDSPhim.ClearSelection()
+        'dgvDSPhim.ClearSelection()
     End Sub
 
     Private Sub LoadDSPhongChieu()
@@ -40,16 +40,23 @@ Public Class frmQLLichChieu
 
 
     Private Sub dgvDSPhim_SelectionChanged(sender As Object, e As EventArgs) Handles dgvDSPhim.SelectionChanged
-        If (dgvDSPhim.SelectedRows.Count > 0) Then
-            Dim maPhim As Integer = dgvDSPhim.SelectedRows(0).Cells("MaPhim").Value
+        If GetMaPhim() <> 0 Then
+            Dim maPhim As Integer = GetMaPhim()
             Load_DS_SuatChieu_Theo_Ma_Phim(maPhim)
         End If
     End Sub
 
+    Private Function GetMaPhim() As Integer
+        If (dgvDSPhim.SelectedRows.Count > 0) Then
+            Return dgvDSPhim.SelectedRows(0).Cells("MaPhim").Value
+        End If
+        Return 0
+    End Function
+
     Private Sub Load_DS_SuatChieu_Theo_Ma_Phim(ByVal maPhim As Integer)
         dgvSuatChieu.AutoGenerateColumns = False
         dgvSuatChieu.DataSource = SuatChieuController.Get_DS_By_Ma_Phim(maPhim)
-        dgvSuatChieu.Columns(0).DefaultCellStyle.Format = "hh:mm:ss"
+        'dgvSuatChieu.Columns(0).DefaultCellStyle.Format = "hh:mm:ss"
         dgvSuatChieu.ClearSelection()
 
     End Sub
@@ -60,39 +67,32 @@ Public Class frmQLLichChieu
     End Sub
 
     Private Sub dtpFrom_Leave(sender As Object, e As EventArgs) Handles dtpFrom.Leave
-        'dtp_Leave(dtpFrom, dtpTo)
+        dtp_Leave(dtpFrom)
     End Sub
 
-    Private Sub dtp_Leave(ByRef dtpFrom As DateTimePicker, ByRef dtpTo As DateTimePicker)
-        If dtpFrom.Value = Format(Today, "MM/dd/yyyy") & " 12:00:00 AM" And dtpTo.Value = Format(Today, "MM/dd/yyyy") & " 12:00:00 AM" Then
+    Private Sub dtp_Leave(ByRef dtpFrom As DateTimePicker)
+        If dtpFrom.Value = Format(Today, "MM/dd/yyyy") & " 12:00:00 AM" Then
             dtpFrom.Format = DateTimePickerFormat.Custom
-            dtpTo.Format = DateTimePickerFormat.Custom
         End If
     End Sub
 
-    Private Sub dtp_Erase(ByRef dtpFrom As DateTimePicker, ByRef dtpTo As DateTimePicker)
+    Private Sub dtp_Erase(ByRef dtpFrom As DateTimePicker)
         dtpFrom.Format = DateTimePickerFormat.Custom
-        dtpTo.Format = DateTimePickerFormat.Custom
     End Sub
 
-    Private Sub dtp_MouseDown(ByRef dtpFrom As DateTimePicker, ByRef dtpTo As DateTimePicker)
+    Private Sub dtp_MouseDown(ByRef dtpFrom As DateTimePicker)
         If dtpFrom.Format = DateTimePickerFormat.Custom Then
             dtpFrom.Format = DateTimePickerFormat.Time
             dtpFrom.Value = Format(Today, "MM/dd/yyyy") & " 12:00:00 AM"
-            If dtpTo.Format = DateTimePickerFormat.Custom Then
-                dtpTo.Format = DateTimePickerFormat.Time
-                dtpTo.Value = Format(Today, "MM/dd/yyyy") & " 12:00:00 AM"
-            End If
         End If
     End Sub
-
     Private Sub dtpFrom_MouseDown(sender As Object, e As MouseEventArgs) Handles dtpFrom.MouseDown
-        'dtp_MouseDown(dtpFrom, dtpTo)
+        dtp_MouseDown(dtpFrom)
     End Sub
 
     Private Sub dtpFrom_KeyDown(sender As Object, e As KeyEventArgs) Handles dtpFrom.KeyDown
         If e.KeyCode = 8 Or e.KeyCode = 46 Then
-            'dtp_Erase(dtpFrom, dtpTo)
+            dtp_Erase(dtpFrom)
         End If
     End Sub
 
@@ -117,6 +117,7 @@ Public Class frmQLLichChieu
                                      .SuatChieu = dtpFrom.Value}
             If (SuatChieuController.Them(sc)) Then
                 MessageBox.Show("Thêm suất chiều thành công.")
+                Load_DS_SuatChieu_Theo_Ma_Phim(maPhim)
             Else
                 MessageBox.Show("Thêm suất chiều thất bại.")
             End If
@@ -124,7 +125,7 @@ Public Class frmQLLichChieu
         If maPhim = 0 Then
             MessageBox.Show("Chọn phim cần thêm suất.")
         End If
-        
+
     End Sub
 
     Private Function Get_Suat_Chieu() As SuatChieu
@@ -139,6 +140,35 @@ Public Class frmQLLichChieu
             .MaPhong = dgvSuatChieu.SelectedRows(0).Cells("MaPhong").Value,
             .MaRap = dgvSuatChieu.SelectedRows(0).Cells("MaRap").Value,
             .NgayChieu = ngayChieu,
-            .SuatChieu = suatBatDau}
+            .SuatChieu = suatBatDau,
+            .MaSuat = Get_Ma_Suat()}
     End Function
+
+    Private Function Get_Ma_Suat() As Integer
+        If (dgvSuatChieu.SelectedRows.Count > 0) Then Return dgvSuatChieu.SelectedRows(0).Cells("MaSuat").Value
+        Return 0
+    End Function
+
+    Private Sub btnXoa_Click(sender As Object, e As EventArgs) Handles btnXoa.Click
+        Dim maSuat As Integer = Get_Ma_Suat()
+        If maSuat <> 0 Then
+            If (SuatChieuController.Xoa(maSuat)) Then
+                MessageBox.Show("Xoá thành công.")
+                Load_DS_SuatChieu_Theo_Ma_Phim(GetMaPhim())
+            Else
+                MessageBox.Show("Xoá thất bại.")
+            End If
+        Else
+            MessageBox.Show("Chọn suất cần xoá.")
+        End If
+    End Sub
+
+    Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
+        Dim sc As SuatChieu = Get_Suat_Chieu()
+        If (SuatChieuController.CapNhat(sc)) Then
+            MessageBox.Show("Cập nhật thành công.")
+        Else
+            MessageBox.Show("Cập nhật thất bai.")
+        End If
+    End Sub
 End Class
