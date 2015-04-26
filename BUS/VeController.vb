@@ -16,4 +16,21 @@ Public Class VeController
     Public Shared Function Search(mave As Integer) As DataTable
         Return VeDA.Search(mave)
     End Function
+
+    Shared Function Lay_DS_DoanhThu() As DataTable
+        Return VeDA.Lay_DS_DoanhThu_Theo_Phim()
+    End Function
+
+    Shared Function Lay_DS_DoanhThu_Theo_Phong_Chieu() As Object
+        Return VeDA.Lay_DS_DoanhThu_Theo_Phong_Chieu()
+    End Function
+
+    Shared Function Lay_DS_DoanhThu_Theo_Ngay() As Object
+        Return VeDA.Lay_DS_DoanhThu_Theo_Ngay()
+    End Function
+
+    Shared Function Lay_DS_DoanhThu_Between_Ngay(dtpFrom As Date, dtpTo As Date) As DataTable
+        Return VeDA.Lay_DS_DoanhThu_Between_Ngay(dtpFrom, dtpTo)
+    End Function
+
 End Class

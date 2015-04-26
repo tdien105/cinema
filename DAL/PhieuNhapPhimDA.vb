@@ -90,9 +90,4 @@ Public Class PhieuNhapPhimDA
         End Try
         Return result
     End Function
-
-    Shared Function Lay_DS_DoanhThu() As DataTable
-        Throw New NotImplementedException
-    End Function
-
 End Class

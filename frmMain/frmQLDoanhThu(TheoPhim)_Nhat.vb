@@ -19,6 +19,6 @@ Public Class frmQLDoanhThu_TheoPhim__Nhat
         dgvDS.Columns(1).HeaderText = "Doanh Thu"
         dgvDS.Columns(1).DataPropertyName = "SoTien"
 
-        dgvDS.DataSource = PhieuNhapPhimController.Lay_DS_DoanhThu()
+        dgvDS.DataSource = VeController.Lay_DS_DoanhThu()
     End Sub
 End Class

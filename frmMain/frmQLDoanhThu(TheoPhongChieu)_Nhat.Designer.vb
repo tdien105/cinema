@@ -23,28 +23,41 @@ Partial Class frmQLDoanhThu_TheoPhongChieu__Nhat
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmQLDoanhThu_TheoPhongChieu__Nhat))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvDS = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvDS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'dgvDS
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 78)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(732, 195)
-        Me.DataGridView1.TabIndex = 7
+        Me.dgvDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDS.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
+        Me.dgvDS.Location = New System.Drawing.Point(15, 78)
+        Me.dgvDS.Name = "dgvDS"
+        Me.dgvDS.Size = New System.Drawing.Size(732, 195)
+        Me.dgvDS.TabIndex = 7
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Tên Phòng"
+        Me.Column1.MaxInputLength = 3276732
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 350
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Doanh Thu"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 350
         '
         'Label2
         '
@@ -58,7 +71,7 @@ Partial Class frmQLDoanhThu_TheoPhongChieu__Nhat
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.DataGridView1)
+        Me.GroupBox2.Controls.Add(Me.dgvDS)
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Location = New System.Drawing.Point(34, 156)
@@ -97,19 +110,6 @@ Partial Class frmQLDoanhThu_TheoPhongChieu__Nhat
         Me.PictureBox2.TabIndex = 28
         Me.PictureBox2.TabStop = False
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Tên Phòng"
-        Me.Column1.MaxInputLength = 3276732
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 350
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Doanh Thu"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 350
-        '
         'frmQLDoanhThu_TheoPhongChieu__Nhat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -120,7 +120,7 @@ Partial Class frmQLDoanhThu_TheoPhongChieu__Nhat
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "frmQLDoanhThu_TheoPhongChieu__Nhat"
         Me.Text = "frmQLDoanhThu_TheoPhongChieu__Nhat"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvDS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -128,7 +128,7 @@ Partial Class frmQLDoanhThu_TheoPhongChieu__Nhat
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvDS As System.Windows.Forms.DataGridView
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Button2 As System.Windows.Forms.Button

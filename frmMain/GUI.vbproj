@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{983F71FA-2C70-4C5A-9142-E43615A3FA5F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>frmMain.frmQLLichChieu</StartupObject>
+    <StartupObject>frmMain.frmQLDoanhThu_TheoPhongChieu__Nhat</StartupObject>
     <RootNamespace>frmMain</RootNamespace>
     <AssemblyName>frmMain</AssemblyName>
     <FileAlignment>512</FileAlignment>
