@@ -13,7 +13,7 @@ Public Class PhimController
         Return PhimDA.Sua(p) <> -1
     End Function
     Public Shared Function Xoa(maphim As Integer) As Integer
-        Return PhimDA.Xoa(maphim)
+        Return PhimDA.Xoa(maphim) <> -1
     End Function
 
     Shared Function SearchResult(keyWord As String, tieuChi As Integer) As DataView

@@ -56,10 +56,10 @@ Partial Class frmQLPhim
         Me.btnposter = New DevExpress.XtraEditors.SimpleButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txttomtat = New System.Windows.Forms.TextBox()
         Me.group = New System.Windows.Forms.GroupBox()
         Me.video = New AxWMPLib.AxWindowsMediaPlayer()
         Me.opd = New System.Windows.Forms.OpenFileDialog()
-        Me.txttomtat = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.txtsotien.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtthoiluong.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -380,6 +380,14 @@ Partial Class frmQLPhim
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Tóm tắt:"
         '
+        'txttomtat
+        '
+        Me.txttomtat.Location = New System.Drawing.Point(7, 16)
+        Me.txttomtat.Multiline = True
+        Me.txttomtat.Name = "txttomtat"
+        Me.txttomtat.Size = New System.Drawing.Size(205, 225)
+        Me.txttomtat.TabIndex = 0
+        '
         'group
         '
         Me.group.Controls.Add(Me.video)
@@ -403,14 +411,6 @@ Partial Class frmQLPhim
         'opd
         '
         Me.opd.FileName = "OpenFileDialog1"
-        '
-        'txttomtat
-        '
-        Me.txttomtat.Location = New System.Drawing.Point(7, 16)
-        Me.txttomtat.Multiline = True
-        Me.txttomtat.Name = "txttomtat"
-        Me.txttomtat.Size = New System.Drawing.Size(205, 225)
-        Me.txttomtat.TabIndex = 0
         '
         'frmQLPhim
         '

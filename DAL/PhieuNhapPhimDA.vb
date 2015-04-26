@@ -12,7 +12,7 @@ Public Class PhieuNhapPhimDA
         cmd.CommandText = "INSERT INTO PHIEUNHAPPHIM(MAPHIM,NGAYNHAP,SOTIEN) VALUES (@MaPhim,@NgayNhap,@SoTien)"
         Dim para As DbParameter = cmd.CreateParameter()
         para.ParameterName = "@MaPhim"
-        para.Value = p.MaPhieu
+        para.Value = p.MaPhim
         para.DbType = DbType.Int32
         cmd.Parameters.Add(para)
 
