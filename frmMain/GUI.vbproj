@@ -111,10 +111,22 @@
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmQLDoanhThu%28TheoPhim%29_Cuong.Designer.vb">
+      <DependentUpon>frmQLDoanhThu%28TheoPhim%29_Cuong.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLDoanhThu%28TheoPhim%29_Cuong.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmQLDoanhThu%28TheoPhim%29_Nhat.Designer.vb">
       <DependentUpon>frmQLDoanhThu%28TheoPhim%29_Nhat.vb</DependentUpon>
     </Compile>
     <Compile Include="frmQLDoanhThu%28TheoPhim%29_Nhat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLDoanhThu%28TheoPhongChieu%29_Cuong.Designer.vb">
+      <DependentUpon>frmQLDoanhThu%28TheoPhongChieu%29_Cuong.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLDoanhThu%28TheoPhongChieu%29_Cuong.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQLDoanhThu%28TheoPhongChieu%29_Nhat.Designer.vb">
@@ -221,8 +233,14 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDoanhThu%28TheoPhim%29_Cuong.resx">
+      <DependentUpon>frmQLDoanhThu%28TheoPhim%29_Cuong.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQLDoanhThu%28TheoPhim%29_Nhat.resx">
       <DependentUpon>frmQLDoanhThu%28TheoPhim%29_Nhat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDoanhThu%28TheoPhongChieu%29_Cuong.resx">
+      <DependentUpon>frmQLDoanhThu%28TheoPhongChieu%29_Cuong.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLDoanhThu%28TheoPhongChieu%29_Nhat.resx">
       <DependentUpon>frmQLDoanhThu%28TheoPhongChieu%29_Nhat.vb</DependentUpon>

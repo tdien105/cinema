@@ -62,7 +62,7 @@ Partial Class frmBookVe
         Me.PanelControl1.Controls.Add(Me.Label2)
         Me.PanelControl1.Controls.Add(Me.Label1)
         Me.PanelControl1.Controls.Add(Me.txtsove)
-        Me.PanelControl1.Location = New System.Drawing.Point(1, 2)
+        Me.PanelControl1.Location = New System.Drawing.Point(23, 30)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(178, 362)
         Me.PanelControl1.TabIndex = 0
@@ -184,7 +184,7 @@ Partial Class frmBookVe
         '
         'btnclear
         '
-        Me.btnclear.Location = New System.Drawing.Point(359, 341)
+        Me.btnclear.Location = New System.Drawing.Point(311, 369)
         Me.btnclear.Name = "btnclear"
         Me.btnclear.Size = New System.Drawing.Size(75, 23)
         Me.btnclear.TabIndex = 19
@@ -192,7 +192,7 @@ Partial Class frmBookVe
         '
         'btnbook
         '
-        Me.btnbook.Location = New System.Drawing.Point(478, 341)
+        Me.btnbook.Location = New System.Drawing.Point(230, 369)
         Me.btnbook.Name = "btnbook"
         Me.btnbook.Size = New System.Drawing.Size(75, 23)
         Me.btnbook.TabIndex = 19
@@ -202,14 +202,14 @@ Partial Class frmBookVe
         '
         Me.pnMain.Location = New System.Drawing.Point(230, 35)
         Me.pnMain.Name = "pnMain"
-        Me.pnMain.Size = New System.Drawing.Size(431, 280)
+        Me.pnMain.Size = New System.Drawing.Size(578, 318)
         Me.pnMain.TabIndex = 20
         '
         'frmBookVe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(690, 404)
+        Me.ClientSize = New System.Drawing.Size(834, 430)
         Me.Controls.Add(Me.pnMain)
         Me.Controls.Add(Me.btnbook)
         Me.Controls.Add(Me.btnclear)
