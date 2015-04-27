@@ -57,12 +57,8 @@ Partial Class frmBookVe
         Me.PanelControl1.Controls.Add(Me.Label3)
         Me.PanelControl1.Controls.Add(Me.Label2)
         Me.PanelControl1.Controls.Add(Me.Label1)
-<<<<<<< HEAD
-        Me.PanelControl1.Controls.Add(Me.txtsove)
         Me.PanelControl1.Location = New System.Drawing.Point(23, 30)
-=======
         Me.PanelControl1.Location = New System.Drawing.Point(1, 2)
->>>>>>> 42dd87338b8314a5589385c726e9da54e8400cf6
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(178, 362)
         Me.PanelControl1.TabIndex = 0

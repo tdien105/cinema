@@ -1,0 +1,15 @@
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\BUS.dll
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\BUS.pdb
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\BUS.xml
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\DAL.dll
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\DAO.dll
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\DAL.pdb
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\DAL.xml
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\DAO.pdb
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\bin\Debug\DAO.xml
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\obj\Debug\BUS.vbprojResolveAssemblyReference.cache
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\obj\Debug\BUS.Resources.resources
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\obj\Debug\BUS.vbproj.GenerateResource.Cache
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\obj\Debug\BUS.dll
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\obj\Debug\BUS.xml
+C:\Users\Thanh\Desktop\cinema(Nhat)\cinema\BUS\obj\Debug\BUS.pdb
