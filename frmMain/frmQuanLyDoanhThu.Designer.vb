@@ -32,16 +32,21 @@ Partial Class frmQuanLyDoanhThu
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvDS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -49,9 +54,9 @@ Partial Class frmQuanLyDoanhThu
         Me.GroupBox2.Controls.Add(Me.PictureBox2)
         Me.GroupBox2.Controls.Add(Me.SimpleButton1)
         Me.GroupBox2.Controls.Add(Me.dgvDS)
-        Me.GroupBox2.Location = New System.Drawing.Point(39, 187)
+        Me.GroupBox2.Location = New System.Drawing.Point(29, 187)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1110, 327)
+        Me.GroupBox2.Size = New System.Drawing.Size(1053, 327)
         Me.GroupBox2.TabIndex = 35
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Báo cáo"
@@ -72,7 +77,7 @@ Partial Class frmQuanLyDoanhThu
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(131, 30)
         Me.SimpleButton1.TabIndex = 8
-        Me.SimpleButton1.Text = "In"
+        Me.SimpleButton1.Text = "Print"
         '
         'dgvDS
         '
@@ -82,7 +87,7 @@ Partial Class frmQuanLyDoanhThu
         Me.dgvDS.Location = New System.Drawing.Point(15, 32)
         Me.dgvDS.Name = "dgvDS"
         Me.dgvDS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDS.Size = New System.Drawing.Size(1078, 232)
+        Me.dgvDS.Size = New System.Drawing.Size(1023, 232)
         Me.dgvDS.TabIndex = 7
         '
         'Column1
@@ -99,7 +104,7 @@ Partial Class frmQuanLyDoanhThu
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(39, 49)
+        Me.RadioButton1.Location = New System.Drawing.Point(51, 56)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(104, 17)
         Me.RadioButton1.TabIndex = 36
@@ -110,7 +115,7 @@ Partial Class frmQuanLyDoanhThu
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(174, 51)
+        Me.RadioButton2.Location = New System.Drawing.Point(21, 31)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(112, 17)
         Me.RadioButton2.TabIndex = 36
@@ -125,16 +130,48 @@ Partial Class frmQuanLyDoanhThu
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
-        Me.GroupBox1.Location = New System.Drawing.Point(325, 21)
+        Me.GroupBox1.Location = New System.Drawing.Point(400, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(824, 68)
+        Me.GroupBox1.Size = New System.Drawing.Size(682, 100)
         Me.GroupBox1.TabIndex = 37
         Me.GroupBox1.TabStop = False
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(358, 55)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(167, 20)
+        Me.DateTimePicker2.TabIndex = 39
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(291, 58)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(56, 13)
+        Me.Label3.TabIndex = 38
+        Me.Label3.Text = "Đến ngày:"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(90, 55)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(160, 20)
+        Me.DateTimePicker1.TabIndex = 39
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(22, 59)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "Từ ngày:"
         '
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(17, 28)
+        Me.RadioButton3.Location = New System.Drawing.Point(25, 31)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(126, 17)
         Me.RadioButton3.TabIndex = 37
@@ -142,57 +179,61 @@ Partial Class frmQuanLyDoanhThu
         Me.RadioButton3.Text = "Theo khoản thời gian"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(218, 29)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
-        Me.Label2.TabIndex = 38
-        Me.Label2.Text = "Từ ngày:"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(285, 25)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 39
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(540, 32)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(56, 13)
-        Me.Label3.TabIndex = 38
-        Me.Label3.Text = "Đến ngày:"
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(607, 28)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker2.TabIndex = 39
-        '
         'SimpleButton2
         '
-        Me.SimpleButton2.Location = New System.Drawing.Point(479, 113)
+        Me.SimpleButton2.Location = New System.Drawing.Point(467, 143)
         Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(252, 53)
+        Me.SimpleButton2.Size = New System.Drawing.Size(252, 33)
         Me.SimpleButton2.TabIndex = 8
-        Me.SimpleButton2.Text = "Xuất báo cáo doanh thu"
+        Me.SimpleButton2.Text = "Lọc"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(51, 80)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 38
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(21, 54)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.TabIndex = 38
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Location = New System.Drawing.Point(29, 27)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(173, 100)
+        Me.GroupBox3.TabIndex = 39
+        Me.GroupBox3.TabStop = False
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.ComboBox2)
+        Me.GroupBox4.Controls.Add(Me.RadioButton2)
+        Me.GroupBox4.Location = New System.Drawing.Point(219, 27)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(165, 100)
+        Me.GroupBox4.TabIndex = 40
+        Me.GroupBox4.TabStop = False
         '
         'frmQuanLyDoanhThu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1179, 526)
+        Me.ClientSize = New System.Drawing.Size(1114, 541)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SimpleButton2)
-        Me.Controls.Add(Me.RadioButton2)
         Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Name = "frmQuanLyDoanhThu"
         Me.Text = "frmQuanLyDoanhThu"
         Me.GroupBox2.ResumeLayout(False)
@@ -200,6 +241,8 @@ Partial Class frmQuanLyDoanhThu
         CType(Me.dgvDS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -219,4 +262,8 @@ Partial Class frmQuanLyDoanhThu
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
 End Class
